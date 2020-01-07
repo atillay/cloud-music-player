@@ -1,0 +1,198 @@
+// Variables
+@import 'variables';
+
+body {
+  background: #efefef;
+}
+
+#root {
+  height: 100%;
+}
+
+.centered {
+  text-align: center;
+  margin: auto;
+}
+
+.centered-loader {
+  font-size: 50px;
+  text-align: center;
+  margin-top: 100px;
+}
+
+.container {
+  width: calc(100% - 30px);
+  max-width: 1000px;
+  margin: auto;
+}
+
+.main-header {
+  z-index: 9;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: #0984e3;
+  padding: 12px 0;
+  font-size: 1.1em;
+
+  .main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo a {
+      color: #fff;
+    }
+    .user {
+      color: #fff;
+    }
+  }
+}
+
+.main-content {
+  background: #fff;
+  padding: 15px 12px 50px 12px;
+}
+
+.audio-player {
+  position: fixed;
+  bottom: 0;
+  width: calc(100% - 30px);
+  max-width: 1000px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: 50px;
+  background: #374656;
+  color: #fff;
+  box-shadow: -1px -4px 24px 0px rgba(0,0,0,0.31);
+
+  .audio-player-wrapper {
+    margin-top: 9px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding: 0 15px;
+
+    .left-controls {
+      margin-right: 16px;
+      .btn-play-pause {
+        width: 40px;
+        font-size: 1.4em;
+      }
+    }
+    .progress-bar-wrapper {
+      align-items: center;
+      width: auto;
+      display: flex;
+      flex: 1;
+
+      .progress-bar {
+        flex: 1;
+        height: 18px;
+        border-radius: 3px;
+        position: relative;
+        cursor: pointer;
+
+        &:before {
+          content: ' ';
+          top: 6px;
+          height: 6px;
+          position: absolute;
+          width: 100%;
+          border-radius: inherit;
+          background: darken(#374656, 15);
+        }
+
+        .progress-track {
+          top: 6px;
+          height: 6px;
+          border-radius: inherit;
+          background: #0984e3;
+          position: absolute;
+          left: 0;
+          width: 0;
+        }
+
+        .audio-title {
+          padding: 8px 30px 0 30px;
+          border-radius: 4px;
+          cursor: default;
+          background: #374656;
+          position: absolute;
+          top: -34px;
+          left: 50%;
+          font-size: 0.9em;
+          white-space: nowrap;
+          transform: translate(-50%, 0);
+        }
+      }
+
+      .elapsed-time {
+        margin-right: 15px;
+      }
+      .total-time {
+        margin-left: 15px;
+      }
+    }
+
+    .right-controls {
+      margin-left: 16px;
+
+      .volume-control {
+
+      }
+    }
+  }
+}
+
+.popover-volume-slider {
+  height: 100px;
+}
+
+
+.layout-public {
+  display: flex;
+  height: 100%;
+
+  .side-content {
+    width: 40%;
+    height: 100%;
+    background-image: url('../assets/images/login-bg.jpg');
+    background-size: cover;
+  }
+
+  .main-content {
+    width: auto;
+    flex: 1;
+    height: 100%;
+    padding: 30px;
+    align-items: center;
+
+    .logo {
+      text-align: center;
+      font-size: 1.5em;
+      font-weight: 600;
+      margin: 20px 0 40px 0;
+    }
+  }
+
+  @media (max-width: 760px) {
+    & {
+      flex-direction: column;
+    }
+
+    .side-content {
+      width: 100%;
+      height: 50%;
+    }
+  }
+}
+
+.login {
+  p {
+    margin: 0 auto 30px auto;
+    max-width: 400px;
+    text-align: center;
+  }
+}
